@@ -16,17 +16,13 @@ function website(site) {
 const template = (
   <div>
     <h1>
-      Adding Sass to Webpack
+      Products Microfrontend
     </h1>
-    <h2>
-      {' '}
-      My Name is {user.name}
-    </h2>
-    <p>
-      Please, visit my profile
-      at{' '}
-      {website(user.profile)}
-    </p>
+    <ul>
+      <li>Product1</li>
+      <li>Product2</li>
+      <li>Product3</li>
+    </ul>
   </div>
 );
 
