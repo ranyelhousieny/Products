@@ -2,17 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './styles/styles.scss';
 
-const user = {
-  name: 'Rany ElHousieny',
-  profile: 'https://rany.tk',
-};
-
-function website(site) {
-  if (site) {
-    return site;
-  }
-  return 'Not Available';
-}
 const template = (
   <div>
     <h1>
