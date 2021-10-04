@@ -1,6 +1,8 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
 
+const packageJsonDeps =
+  require('./package.json').dependencies;
 module.exports = {
   mode: 'development',
   devServer: {
@@ -45,6 +47,23 @@ module.exports = {
         exposes: {
           './ProductsIndex':
             './src/index.js',
+        },
+        shared: {
+          ...packageJsonDeps,
+          react: {
+            singleton: true,
+            eager: true,
+            requiredVersion:
+              packageJsonDeps.react,
+          },
+          'react-dom': {
+            singleton: true,
+            eager: true,
+            requiredVersion:
+              packageJsonDeps[
+                'react-dom'
+              ],
+          },
         },
       }
     ),
