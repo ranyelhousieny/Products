@@ -46,6 +46,7 @@ module.exports = {
           './ProductsIndex':
             './src/index.js',
         },
+        shared: ['react'],
       }
     ),
     new HtmlWebpackPlugin({
